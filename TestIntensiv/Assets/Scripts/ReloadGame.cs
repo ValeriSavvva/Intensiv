@@ -11,4 +11,9 @@ public class ReloadGame : MonoBehaviour
         Places.areaForShark = false;
         Places.areaForTable = false;
     }
+    
+    public void exit()
+    {
+        Application.Quit();
+    }
 }
