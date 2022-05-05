@@ -140,13 +140,15 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
             hit.transform.position.z),
             Quaternion.identity) as GameObject;
         Transform svc = transform.parent;
-        newObj.AddComponent<BoxCollider>().size = new Vector3(scale.x + 1, scale.y + 1, scale.z + 1);
+        newObj.AddComponent<BoxCollider>().size = new Vector3(4, 4, 4);
         newObj.GetComponent<BoxCollider>().center = new Vector3(0, 1f, 0);
         newObj.AddComponent<Delete>().enabled = true;
         newObj.GetComponent<Delete>().currentGO = newObj;
         newObj.GetComponent<Delete>().index = Index;
         newObj.GetComponent<Delete>().plane = hit.transform.gameObject;
         newObj.GetComponent<Delete>().svc = svc;
+        Places.delete.SetActive(false);
+        Delete.isClicked = false;
         newObj.transform.Rotate(rotation, Space.World);
         newObj.transform.localScale = scale;
         DragPanel.deleteElement(ref svc, Index);
