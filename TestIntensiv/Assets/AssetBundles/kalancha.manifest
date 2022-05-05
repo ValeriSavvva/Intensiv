@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 3479076509
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9f9712e28e5608970b06a9c1ff37cf6b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 63cc72860e0b5a073863146926d936a8
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Images/kalancha.png
+- Assets/Models/kalancha.fbx
+Dependencies: []

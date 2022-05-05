@@ -246,7 +246,7 @@ MonoBehaviour:
   dragModelPrefab: {fileID: 6370064724271731176, guid: 846bc94e2add0964aa9c624b1fd0ee49, type: 3}
   scrollViewContent: {fileID: 306267578}
   models:
-  - {fileID: 919132149155446097, guid: 584a84dc8378c0148aedf3293b3f400c, type: 3}
+  - {fileID: 919132149155446097, guid: ca56b3a0e94b81942bd3b2e624a9d8ed, type: 3}
   - {fileID: 919132149155446097, guid: 0f61872ebcad6084b9442d5547d5ebff, type: 3}
   images:
   - {fileID: 21300000, guid: 4e088287d2323e845981363d438c503a, type: 3}

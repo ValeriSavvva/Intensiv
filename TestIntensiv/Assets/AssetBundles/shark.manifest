@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 3642256477
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3225f6135a9615f7e726f05e7d302f3a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 51b6d42528e70ebc5423c0fe467844a3
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Models/shark.fbx
+- Assets/Images/shark.png
+Dependencies: []

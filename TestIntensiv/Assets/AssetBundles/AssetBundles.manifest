@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 4124507341
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: kalancha
+      Dependencies: {}
+    Info_1:
+      Name: shark
+      Dependencies: {}
