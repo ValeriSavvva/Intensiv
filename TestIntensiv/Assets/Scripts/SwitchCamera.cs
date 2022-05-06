@@ -38,6 +38,7 @@ public class SwitchCamera : MonoBehaviour
         else
         {
             maincamera.GetComponent<Camera>().enabled = false;
+            maincamera.GetComponent<PhysicsRaycaster>().enabled = false;
             for (int j = 0; j < cm.Length; j++)
             {
                 if (j != i)

@@ -31,7 +31,7 @@ public class LoadModels : MonoBehaviour
 
     public void nextScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     IEnumerator GetObjects()
