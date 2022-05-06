@@ -22,16 +22,10 @@ public class LoadModels : MonoBehaviour
     }
 
     GameModels Models;
-    public GameObject bt;
 
     void Start()
     {
         StartCoroutine(GetObjects());
-    }
-
-    public void nextScene()
-    {
-        SceneManager.LoadScene(1);
     }
 
     IEnumerator GetObjects()
@@ -95,6 +89,6 @@ public class LoadModels : MonoBehaviour
                 }
             }
         }
-        bt.SetActive(true);
+        SceneManager.LoadScene(1);
     }
 }
