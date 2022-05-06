@@ -1,19 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JsonHelper
+public class JsonHelper : MonoBehaviour
 {
-	public static T[] GetArray<T>(string json)
-	{
-		string newJson = "{\"data\":" + json + "}";
-		Wrapper<T> w = UnityEngine.JsonUtility.FromJson<Wrapper<T>>(newJson);
-		return w.data;
-	}
+    public static T[] getJsonArray<T>(string json)
+    {
+        string newJson = "{ \"array\": " + json + "}";
+        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(newJson);
+        Debug.Log(newJson);
+        return wrapper.array;
+    }
 
-	[System.Serializable]
-	class Wrapper<T>
-	{
-		public T[] data;
-	}
+    [Serializable]
+    private class Wrapper<T>
+    {
+        public T[] array;
+    }
 }

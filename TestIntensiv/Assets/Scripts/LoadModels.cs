@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,19 +8,25 @@ using UnityEngine.Networking;
 
 public class LoadModels : MonoBehaviour
 {
-    public struct ObjectFromDisk
+    [Serializable]
+    public class ObjectFromDisk
     {
         public string Name;
         public string BundleUrl;
     }
 
-    ObjectFromDisk[] models;
+    [Serializable]
+    public class GameModels
+    {
+        public ObjectFromDisk[] models;
+    }
+
+    GameModels Models;
     public GameObject bt;
 
     void Start()
     {
         StartCoroutine(GetObjects());
-        bt.SetActive(true);
     }
 
     public void nextScene()
@@ -44,7 +51,12 @@ public class LoadModels : MonoBehaviour
             if(request.isDone)
             {
                 Debug.Log("Получено!");
-                models = JsonHelper.GetArray<ObjectFromDisk>(request.downloadHandler.text);
+                Models = JsonUtility.FromJson<GameModels>(request.downloadHandler.text);
+                for(int i = 0; i < Models.models.Length; i++)
+                {
+                    Debug.Log(Models.models[i].Name);
+                    Debug.Log(Models.models[i].BundleUrl);
+                }
                 Debug.Log(request.downloadHandler.text);
                 StartCoroutine(GetModelsAndSprites());
             }
@@ -53,9 +65,12 @@ public class LoadModels : MonoBehaviour
 
     IEnumerator GetModelsAndSprites()
     {
-        for(int i = 0; i < models.Length; i++)
+        for(int i = 0; i < Models.models.Length; i++)
         {
-            var w = WWW.LoadFromCacheOrDownload(models[i].BundleUrl, 0);
+            while (!Caching.ready)
+                yield return null;
+
+            WWW w = new WWW(Models.models[i].BundleUrl);
             yield return w;
 
             if (w.error != null)
@@ -67,8 +82,8 @@ public class LoadModels : MonoBehaviour
                 if(w.isDone)
                 {
                     var assetBundle = w.assetBundle;
-                    string model = models[i].Name + ".fbx";
-                    string sprite = models[i].Name + ".png";
+                    string model = Models.models[i].Name + ".fbx";
+                    string sprite = Models.models[i].Name + ".png";
 
                     var modelRequest = assetBundle.LoadAssetAsync(model, typeof(GameObject));
                     yield return modelRequest;
@@ -80,5 +95,6 @@ public class LoadModels : MonoBehaviour
                 }
             }
         }
+        bt.SetActive(true);
     }
 }

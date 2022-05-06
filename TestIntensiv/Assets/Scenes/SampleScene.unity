@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.098407626, g: 0.16654387, b: 0.29998446, a: 1}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.124238156, g: 0.21025921, b: 0.37873888, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -245,12 +245,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragModelPrefab: {fileID: 6370064724271731176, guid: 846bc94e2add0964aa9c624b1fd0ee49, type: 3}
   scrollViewContent: {fileID: 306267578}
-  models:
-  - {fileID: 919132149155446097, guid: ca56b3a0e94b81942bd3b2e624a9d8ed, type: 3}
-  - {fileID: 919132149155446097, guid: 0f61872ebcad6084b9442d5547d5ebff, type: 3}
-  images:
-  - {fileID: 21300000, guid: 4e088287d2323e845981363d438c503a, type: 3}
-  - {fileID: 21300000, guid: 860cb1c7d3d4c514a8f3dc3357e21a2e, type: 3}
 --- !u!1 &207880374
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,8 +926,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.36
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -991,7 +985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -4.25, y: 10.79, z: -11.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

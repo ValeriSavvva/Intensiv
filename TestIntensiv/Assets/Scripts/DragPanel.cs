@@ -7,8 +7,8 @@ public class DragPanel : MonoBehaviour
 {
     [SerializeField] private GameObject dragModelPrefab;
     [SerializeField] private Transform scrollViewContent;
-    public static List<GameObject> models;
-    public static List<Sprite> images;
+    public static List<GameObject> models = new List<GameObject>();
+    public static List<Sprite> images = new List<Sprite>();
 
     private void Start()
     {
