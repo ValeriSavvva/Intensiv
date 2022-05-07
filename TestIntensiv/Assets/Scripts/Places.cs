@@ -5,17 +5,24 @@ using UnityEngine.UI;
 
 public class Places : MonoBehaviour
 {
-    public static GameObject delete;
+    public static GameObject info;
     public static GameObject currentObject;
     public static GameObject placeforObject;
+    public static GameObject imageofmodel;
+    public static GameObject nameofmodel;
+    public static GameObject description;
+    public static GameObject mainui;
     public static bool areaForKalancha = false;
     public static bool areaForSobaka = false;
 
     private void Start()
     {
-        delete = GameObject.FindGameObjectWithTag("DeleteObject");
-        delete.SetActive(false);
-        delete.GetComponent<Button>().onClick.AddListener(() =>
+        info = GameObject.FindGameObjectWithTag("Info");
+        imageofmodel = GameObject.FindGameObjectWithTag("ImageOfModel");
+        nameofmodel = GameObject.FindGameObjectWithTag("NameOfModel");
+        description = GameObject.FindGameObjectWithTag("Description");
+        mainui = GameObject.FindGameObjectWithTag("MainUI");
+        info.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
         {
             currentObject = Delete.currentObject;
             placeforObject = Delete.placeforobject;
@@ -30,10 +37,16 @@ public class Places : MonoBehaviour
                 Places.areaForSobaka = false;
             }
             DragPanel.returnElement(ref Delete.svc1, Delete.i);
-            delete.SetActive(false);
+            info.SetActive(false);
+            mainui.SetActive(true);
             Delete.isClicked = false;
-        }
-);
-        delete.SetActive(false);
+        });
+        info.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() =>
+        {
+            info.SetActive(false);
+            mainui.SetActive(true);
+            Delete.isClicked = false;
+        });
+        info.SetActive(false);
     }
 }

@@ -12,6 +12,8 @@ public class LoadModels : MonoBehaviour
     public class ObjectFromDisk
     {
         public string Name;
+        public string RusName;
+        public string Description;
         public string BundleUrl;
     }
 
@@ -30,7 +32,7 @@ public class LoadModels : MonoBehaviour
 
     IEnumerator GetObjects()
     {
-        string url = "https://drive.google.com/uc?export=download&id=1LaG9o_VCmOV_i-dRaMaCmlVlkaqCCAjL";
+        string url = "https://drive.google.com/uc?export=download&id=1cNX4Xdj86Xi57Ld-K-OVEAZavVbRxxzr";
 
         UnityWebRequest request = UnityWebRequest.Get(url);
 
@@ -45,13 +47,8 @@ public class LoadModels : MonoBehaviour
             if(request.isDone)
             {
                 Debug.Log("Получено!");
-                Models = JsonUtility.FromJson<GameModels>(request.downloadHandler.text);
-                for(int i = 0; i < Models.models.Length; i++)
-                {
-                    Debug.Log(Models.models[i].Name);
-                    Debug.Log(Models.models[i].BundleUrl);
-                }
                 Debug.Log(request.downloadHandler.text);
+                Models = JsonUtility.FromJson<GameModels>(request.downloadHandler.text);
                 StartCoroutine(GetModelsAndSprites());
             }
         }
@@ -86,6 +83,8 @@ public class LoadModels : MonoBehaviour
 
                     DragPanel.models.Add(modelRequest.asset as GameObject);
                     DragPanel.images.Add(spriteRequest.asset as Sprite);
+                    DragPanel.names.Add(Models.models[i].RusName);
+                    DragPanel.description.Add(Models.models[i].Description);
                 }
             }
         }

@@ -16,6 +16,11 @@ TagManager:
   - AreaForSobaka
   - kalancha
   - DeleteObject
+  - Info
+  - ImageOfModel
+  - NameOfModel
+  - Description
+  - MainUI
   layers:
   - Default
   - TransparentFX

@@ -147,8 +147,6 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         newObj.GetComponent<Delete>().index = Index;
         newObj.GetComponent<Delete>().plane = hit.transform.gameObject;
         newObj.GetComponent<Delete>().svc = svc;
-        Places.delete.SetActive(false);
-        Delete.isClicked = false;
         newObj.transform.Rotate(rotation, Space.World);
         newObj.transform.localScale = scale;
         DragPanel.deleteElement(ref svc, Index);

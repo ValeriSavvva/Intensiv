@@ -9,6 +9,8 @@ public class DragPanel : MonoBehaviour
     [SerializeField] private Transform scrollViewContent;
     public static List<GameObject> models = new List<GameObject>();
     public static List<Sprite> images = new List<Sprite>();
+    public static List<string> names = new List<string>();
+    public static List<string> description = new List<string>();
 
     private void Start()
     {

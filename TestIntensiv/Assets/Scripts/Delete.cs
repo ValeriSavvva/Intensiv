@@ -14,35 +14,31 @@ public class Delete : MonoBehaviour, IPointerDownHandler
     public static GameObject currentObject;
     public Transform svc;
     public static Transform svc1;
-    public GameObject delete;
+    public GameObject info;
 
-    public static bool isClicked = false;
+    public static bool isClicked;
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("Нажал");
-        if (isClicked)
+        if (!isClicked)
         {
-            delete.SetActive(false);
-            isClicked = false;
-        }
-        else
-        {
-            delete.SetActive(true);
+            Debug.Log("Нажал");
+            info.SetActive(true);
+            Places.mainui.SetActive(false);
             isClicked = true;
+            i = index;
+            currentObject = currentGO;
+            placeforobject = plane;
+            Places.imageofmodel.GetComponent<Image>().sprite = DragPanel.images[i];
+            Places.nameofmodel.GetComponent<Text>().text = DragPanel.names[i];
+            Places.description.GetComponent<Text>().text = DragPanel.description[i];
         }
-        i = index;
-        currentObject = currentGO;
-        placeforobject = plane;
-    }
-    public static void returnobj()
-    {
-        DragPanel.returnElement(ref svc1, i);
     }
 
     private void Start()
     {
+        isClicked = false;
         svc1 = svc;
-        delete = Places.delete;
+        info = Places.info;
     }
 }
