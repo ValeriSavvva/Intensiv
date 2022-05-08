@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Places : MonoBehaviour
 {
     public static GameObject info;
+    public static GameObject infoaboutplace;
     public static GameObject currentObject;
     public static GameObject placeforObject;
     public static GameObject imageofmodel;
@@ -14,18 +15,22 @@ public class Places : MonoBehaviour
     public static GameObject mainui;
     public static GameObject place1;
     public static GameObject place2;
+    public static GameObject descplace;
     public static bool areaForKalancha = false;
     public static bool areaForSobaka = false;
 
     private void Start()
     {
         info = GameObject.FindGameObjectWithTag("Info");
+        infoaboutplace = GameObject.FindGameObjectWithTag("InfoAboutPlace");
         imageofmodel = GameObject.FindGameObjectWithTag("ImageOfModel");
         nameofmodel = GameObject.FindGameObjectWithTag("NameOfModel");
         description = GameObject.FindGameObjectWithTag("Description");
         mainui = GameObject.FindGameObjectWithTag("MainUI");
         place1 = GameObject.FindGameObjectWithTag("place1");
         place2 = GameObject.FindGameObjectWithTag("place2");
+        descplace = GameObject.FindGameObjectWithTag("DescPlace");
+
         info.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
         {
             currentObject = Delete.currentObject;
@@ -47,12 +52,21 @@ public class Places : MonoBehaviour
             mainui.SetActive(true);
             Delete.isClicked = false;
         });
+
         info.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() =>
         {
             info.SetActive(false);
             mainui.SetActive(true);
             Delete.isClicked = false;
         });
+
+        infoaboutplace.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
+        {
+            infoaboutplace.SetActive(false);
+            InfoPlace.isCliked = false;
+        });
+
         info.SetActive(false);
+        infoaboutplace.SetActive(false);
     }
 }
