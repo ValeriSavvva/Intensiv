@@ -21,6 +21,8 @@ TagManager:
   - NameOfModel
   - Description
   - MainUI
+  - place1
+  - place2
   layers:
   - Default
   - TransparentFX
