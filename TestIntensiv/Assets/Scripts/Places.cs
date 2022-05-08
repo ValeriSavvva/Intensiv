@@ -63,6 +63,7 @@ public class Places : MonoBehaviour
         infoaboutplace.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
         {
             infoaboutplace.SetActive(false);
+            mainui.SetActive(true);
             InfoPlace.isCliked = false;
         });
 

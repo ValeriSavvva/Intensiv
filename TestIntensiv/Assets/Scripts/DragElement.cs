@@ -114,30 +114,27 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
         if(Physics.Raycast(ray, out hit))
         {
-            if (!SwitchCamera.currentCamera.Equals(Camera.main))
+            if (hit.transform.tag == "kalancha" && !Places.areaForKalancha)
             {
-                if (hit.transform.tag == "kalancha" && !Places.areaForKalancha)
+                hit.transform.gameObject.SetActive(false);
+                Debug.Log("Попал");
+                if (MainTransform.name.Contains(hit.transform.tag))
                 {
-                    hit.transform.gameObject.SetActive(false);
-                    Debug.Log("Попал");
-                    if(MainTransform.name.Contains(hit.transform.tag))
-                    {
-                        Places.place1.GetComponent<Image>().color = new Color(0, 255, 0);
-                    }
-                    placeObject(hit, new Vector3(0f, -90.0f, 0.0f), new Vector3(3f, 3f, 3f));
-                    Places.areaForKalancha = true;
+                    Places.place1.GetComponent<Image>().color = new Color(0, 255, 0);
                 }
-                else if (hit.transform.tag == "shark" && !Places.areaForSobaka)
+                placeObject(hit, new Vector3(0f, -90.0f, 0.0f), new Vector3(3f, 3f, 3f));
+                Places.areaForKalancha = true;
+            }
+            else if (hit.transform.tag == "shark" && !Places.areaForSobaka)
+            {
+                hit.transform.gameObject.SetActive(false);
+                if (MainTransform.name.Contains(hit.transform.tag))
                 {
-                    hit.transform.gameObject.SetActive(false);
-                    if (MainTransform.name.Contains(hit.transform.tag))
-                    {
-                        Places.place2.GetComponent<Image>().color = new Color(0, 255, 0);
-                    }
-                    Debug.Log("Попал");
-                    placeObject(hit, new Vector3(0f, 120.0f, 0.0f), new Vector3(0.1f, 0.1f, 0.1f));
-                    Places.areaForSobaka = true;
+                    Places.place2.GetComponent<Image>().color = new Color(0, 255, 0);
                 }
+                Debug.Log("Попал");
+                placeObject(hit, new Vector3(0f, 120.0f, 0.0f), new Vector3(0.1f, 0.1f, 0.1f));
+                Places.areaForSobaka = true;
             }
         }
     }

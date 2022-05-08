@@ -22,6 +22,7 @@ public class InfoPlace : MonoBehaviour, IPointerDownHandler
             if (transform.tag == "kalancha")
                 setTextOnPanel(1);
             isCliked = true;
+            Places.mainui.SetActive(false);
         }
     }
 
