@@ -8,8 +8,12 @@ public class ReloadGame : MonoBehaviour
     public void reload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Places.areaForKalancha = false;
-        Places.areaForSobaka = false;
+        for (int i = 0; i < Places.areas.Length; i++)
+            Places.areas[i] = false;
+
+        for (int i = 0; i < Places.rigthareas.Length; i++)
+            Places.rigthareas[i] = false;
+
         Delete.isClicked = false;
     }
     

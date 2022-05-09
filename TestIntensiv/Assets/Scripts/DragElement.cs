@@ -92,7 +92,7 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         }
     }
 
-    private Color green;
+    public Sprite RigthImage;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -101,7 +101,7 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta;
+        rectTransform.anchoredPosition += eventData.delta / Places.canvas.GetComponent<Canvas>().scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -114,27 +114,29 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
         if(Physics.Raycast(ray, out hit))
         {
-            if (hit.transform.tag == "kalancha" && !Places.areaForKalancha)
+            if (hit.transform.tag == "kalancha" && !Places.areas[0])
             {
                 hit.transform.gameObject.SetActive(false);
                 Debug.Log("Попал");
                 if (MainTransform.name.Contains(hit.transform.tag))
                 {
-                    Places.place1.GetComponent<Image>().color = new Color(0, 255, 0);
+                    Places.place1.GetComponent<Image>().sprite = RigthImage;
+                    Places.rigthareas[0] = true;
                 }
                 placeObject(hit, new Vector3(0f, -90.0f, 0.0f), new Vector3(3f, 3f, 3f));
-                Places.areaForKalancha = true;
+                Places.areas[0] = true;
             }
-            else if (hit.transform.tag == "shark" && !Places.areaForSobaka)
+            else if (hit.transform.tag == "shark" && !Places.areas[1])
             {
                 hit.transform.gameObject.SetActive(false);
                 if (MainTransform.name.Contains(hit.transform.tag))
                 {
-                    Places.place2.GetComponent<Image>().color = new Color(0, 255, 0);
+                    Places.place2.GetComponent<Image>().sprite = RigthImage;
+                    Places.rigthareas[1] = true;
                 }
                 Debug.Log("Попал");
                 placeObject(hit, new Vector3(0f, 120.0f, 0.0f), new Vector3(0.1f, 0.1f, 0.1f));
-                Places.areaForSobaka = true;
+                Places.areas[1] = true;
             }
         }
     }

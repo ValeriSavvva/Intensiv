@@ -16,8 +16,10 @@ public class Places : MonoBehaviour
     public static GameObject place1;
     public static GameObject place2;
     public static GameObject descplace;
-    public static bool areaForKalancha = false;
-    public static bool areaForSobaka = false;
+    public static GameObject canvas;
+    public Sprite wrong;
+    public static bool[] areas = { false, false };
+    public static bool[] rigthareas = { false, false };
 
     private void Start()
     {
@@ -30,6 +32,7 @@ public class Places : MonoBehaviour
         place1 = GameObject.FindGameObjectWithTag("place1");
         place2 = GameObject.FindGameObjectWithTag("place2");
         descplace = GameObject.FindGameObjectWithTag("DescPlace");
+        canvas = GameObject.FindGameObjectWithTag("OurCanvas");
 
         info.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
         {
@@ -39,13 +42,15 @@ public class Places : MonoBehaviour
             placeforObject.SetActive(true);
             if (placeforObject.tag == "kalancha")
             {
-                Places.areaForKalancha = false;
-                Places.place1.GetComponent<Image>().color = new Color(255, 0, 0);
+                areas[0] = false;
+                rigthareas[0] = false;
+                place1.GetComponent<Image>().sprite = wrong;
             }
             else if (placeforObject.tag == "shark")
             {
-                Places.areaForSobaka = false;
-                Places.place2.GetComponent<Image>().color = new Color(255, 0, 0);
+                areas[1] = false;
+                rigthareas[1] = false;
+                place2.GetComponent<Image>().sprite = wrong;
             }
             DragPanel.returnElement(ref Delete.svc1, Delete.i);
             info.SetActive(false);

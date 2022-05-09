@@ -11,7 +11,6 @@ TagManager:
   - AreaForTable
   - AreaForShark
   - shark
-  - table
   - AreaForKalancha
   - AreaForSobaka
   - kalancha
@@ -25,6 +24,8 @@ TagManager:
   - place2
   - InfoAboutPlace
   - DescPlace
+  - End
+  - OurCanvas
   layers:
   - Default
   - TransparentFX

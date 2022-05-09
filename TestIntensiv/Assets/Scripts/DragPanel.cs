@@ -7,6 +7,7 @@ public class DragPanel : MonoBehaviour
 {
     [SerializeField] private GameObject dragModelPrefab;
     [SerializeField] private Transform scrollViewContent;
+    [SerializeField] private Sprite RigthImage;
     public static List<GameObject> models = new List<GameObject>();
     public static List<Sprite> images = new List<Sprite>();
     public static List<string> names = new List<string>();
@@ -24,6 +25,7 @@ public class DragPanel : MonoBehaviour
             script.DefaultParentTransform = scrollViewContent;
             script.DragModelPrefab = dragModelPrefab;
             script.DragParentTransform = transform;
+            script.RigthImage = RigthImage;
         }
     }
 
