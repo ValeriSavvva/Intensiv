@@ -117,16 +117,15 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
             if (hit.transform.tag == "kalancha" && !Places.areas[0])
             {
                 hit.transform.gameObject.SetActive(false);
-                Debug.Log("Попал");
                 if (MainTransform.name.Contains(hit.transform.tag))
                 {
                     Places.place1.GetComponent<Image>().sprite = RigthImage;
                     Places.rigthareas[0] = true;
                 }
-                placeObject(hit, new Vector3(0f, -90.0f, 0.0f), new Vector3(3f, 3f, 3f));
+                placeObject(hit, -90f, 2.3f);
                 Places.areas[0] = true;
             }
-            else if (hit.transform.tag == "shark" && !Places.areas[1])
+            if (hit.transform.tag == "shark" && !Places.areas[1])
             {
                 hit.transform.gameObject.SetActive(false);
                 if (MainTransform.name.Contains(hit.transform.tag))
@@ -134,14 +133,24 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
                     Places.place2.GetComponent<Image>().sprite = RigthImage;
                     Places.rigthareas[1] = true;
                 }
-                Debug.Log("Попал");
-                placeObject(hit, new Vector3(0f, 120.0f, 0.0f), new Vector3(0.1f, 0.1f, 0.1f));
+                placeObject(hit, 120f, 0.1f);
                 Places.areas[1] = true;
+            }
+            if (hit.transform.tag == "gaup" && !Places.areas[2])
+            {
+                hit.transform.gameObject.SetActive(false);
+                if (MainTransform.name.Contains(hit.transform.tag))
+                {
+                    Places.place3.GetComponent<Image>().sprite = RigthImage;
+                    Places.rigthareas[2] = true;
+                }
+                placeObject(hit, -50f, 2f);
+                Places.areas[2] = true;
             }
         }
     }
 
-    private void placeObject(RaycastHit hit, Vector3 rotation, Vector3 scale)
+    private void placeObject(RaycastHit hit, float rotation, float scale)
     {
         GameObject newObj = Instantiate(MainTransform,
             new Vector3(hit.transform.position.x,
@@ -149,15 +158,20 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
             hit.transform.position.z),
             Quaternion.identity) as GameObject;
         Transform svc = transform.parent;
-        newObj.AddComponent<BoxCollider>().size = new Vector3(4, 4, 4);
+        newObj.AddComponent<BoxCollider>().size = new Vector3(4f, 4f, 4f);
         newObj.GetComponent<BoxCollider>().center = new Vector3(0, 1f, 0);
         newObj.AddComponent<Delete>().enabled = true;
         newObj.GetComponent<Delete>().currentGO = newObj;
         newObj.GetComponent<Delete>().index = Index;
         newObj.GetComponent<Delete>().plane = hit.transform.gameObject;
         newObj.GetComponent<Delete>().svc = svc;
-        newObj.transform.Rotate(rotation, Space.World);
-        newObj.transform.localScale = scale;
+        newObj.transform.Rotate(new Vector3(MainTransform.transform.rotation.x,
+            rotation,
+            MainTransform.transform.rotation.z), 
+            Space.World);
+        newObj.transform.localScale = new Vector3(MainTransform.transform.localScale.x * scale,
+            MainTransform.transform.localScale.y * scale,
+            MainTransform.transform.localScale.z * scale);
         DragPanel.deleteElement(ref svc, Index);
     }
 }

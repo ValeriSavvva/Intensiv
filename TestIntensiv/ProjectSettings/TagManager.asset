@@ -26,6 +26,9 @@ TagManager:
   - DescPlace
   - End
   - OurCanvas
+  - gaup
+  - place3
+  - Instruction
   layers:
   - Default
   - TransparentFX

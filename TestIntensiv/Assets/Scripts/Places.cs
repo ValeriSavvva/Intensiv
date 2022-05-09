@@ -15,11 +15,12 @@ public class Places : MonoBehaviour
     public static GameObject mainui;
     public static GameObject place1;
     public static GameObject place2;
+    public static GameObject place3;
     public static GameObject descplace;
     public static GameObject canvas;
     public Sprite wrong;
-    public static bool[] areas = { false, false };
-    public static bool[] rigthareas = { false, false };
+    public static bool[] areas = { false, false, false };
+    public static bool[] rigthareas = { false, false, false };
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class Places : MonoBehaviour
         mainui = GameObject.FindGameObjectWithTag("MainUI");
         place1 = GameObject.FindGameObjectWithTag("place1");
         place2 = GameObject.FindGameObjectWithTag("place2");
+        place3 = GameObject.FindGameObjectWithTag("place3");
         descplace = GameObject.FindGameObjectWithTag("DescPlace");
         canvas = GameObject.FindGameObjectWithTag("OurCanvas");
 
@@ -46,11 +48,17 @@ public class Places : MonoBehaviour
                 rigthareas[0] = false;
                 place1.GetComponent<Image>().sprite = wrong;
             }
-            else if (placeforObject.tag == "shark")
+            if (placeforObject.tag == "shark")
             {
                 areas[1] = false;
                 rigthareas[1] = false;
                 place2.GetComponent<Image>().sprite = wrong;
+            }
+            if (placeforObject.tag == "gaup")
+            {
+                areas[2] = false;
+                rigthareas[2] = false;
+                place3.GetComponent<Image>().sprite = wrong;
             }
             DragPanel.returnElement(ref Delete.svc1, Delete.i);
             info.SetActive(false);

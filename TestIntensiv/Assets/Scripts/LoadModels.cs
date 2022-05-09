@@ -88,6 +88,6 @@ public class LoadModels : MonoBehaviour
                 }
             }
         }
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 }

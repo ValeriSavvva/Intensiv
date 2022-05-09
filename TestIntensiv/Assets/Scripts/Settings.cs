@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Settings : MonoBehaviour
 {
     public GameObject reload;
     public GameObject instruction;
     public GameObject exit;
+    public GameObject instructiontext;
 
     private bool isClicked = false;
 
@@ -26,5 +28,29 @@ public class Settings : MonoBehaviour
             instruction.SetActive(false);
             exit.SetActive(false);
         }
+    }
+
+    public void show()
+    {
+        instructiontext.SetActive(true);
+        Places.mainui.SetActive(false);
+    }
+    
+    public void close()
+    {
+        instructiontext.SetActive(false);
+        Places.mainui.SetActive(true);
+    }
+
+    public void reloadgame()
+    {
+        SceneManager.LoadScene(3);
+        for (int i = 0; i < Places.areas.Length; i++)
+            Places.areas[i] = false;
+
+        for (int i = 0; i < Places.rigthareas.Length; i++)
+            Places.rigthareas[i] = false;
+
+        Delete.isClicked = false;
     }
 }

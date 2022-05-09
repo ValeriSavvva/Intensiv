@@ -8,7 +8,8 @@ public class InfoPlace : MonoBehaviour, IPointerDownHandler
 {
     private static string[] descriptions = new string[] { 
     "А тут вот стояла какая-то рыба синяя, прохожие называли её ласково - Мистер Карп",
-    "На этом месте когда-то стояло здание, которое предназначено для тушения пожаров, но оно сгорело"
+    "На этом месте когда-то стояло здание, которое предназначено для тушения пожаров, но оно сгорело",
+    "Гауптвахта"
     };
 
     public static bool isCliked = false;
@@ -21,6 +22,8 @@ public class InfoPlace : MonoBehaviour, IPointerDownHandler
                 setTextOnPanel(0);
             if (transform.tag == "kalancha")
                 setTextOnPanel(1);
+            if (transform.tag == "gaup")
+                setTextOnPanel(2);
             isCliked = true;
             Places.mainui.SetActive(false);
         }
