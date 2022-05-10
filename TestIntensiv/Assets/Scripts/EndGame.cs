@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EndGame : MonoBehaviour
@@ -19,6 +20,17 @@ public class EndGame : MonoBehaviour
         text.text = $"Правильно поставлено {count} из {Places.rigthareas.Length} памятников";
     }
 
+    public void main()
+    {
+        SceneManager.LoadScene(3);
+        for (int i = 0; i < Places.areas.Length; i++)
+            Places.areas[i] = false;
+
+        for (int i = 0; i < Places.rigthareas.Length; i++)
+            Places.rigthareas[i] = false;
+
+        Delete.isClicked = false;
+    }
     public void exit()
     {
         Application.Quit();

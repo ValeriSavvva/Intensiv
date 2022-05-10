@@ -8,6 +8,8 @@ using UnityEngine.Networking;
 
 public class LoadModels : MonoBehaviour
 {
+    public static bool isFirstPlay = true;
+
     [Serializable]
     public class ObjectFromDisk
     {

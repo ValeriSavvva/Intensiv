@@ -18,7 +18,9 @@ public class Places : MonoBehaviour
     public static GameObject place3;
     public static GameObject descplace;
     public static GameObject canvas;
+    public static GameObject instruction;
     public Sprite wrong;
+    public static bool isFirstPlay;
     public static bool[] areas = { false, false, false };
     public static bool[] rigthareas = { false, false, false };
 
@@ -35,6 +37,7 @@ public class Places : MonoBehaviour
         place3 = GameObject.FindGameObjectWithTag("place3");
         descplace = GameObject.FindGameObjectWithTag("DescPlace");
         canvas = GameObject.FindGameObjectWithTag("OurCanvas");
+        instruction = GameObject.FindGameObjectWithTag("Instruction");
 
         info.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
         {
@@ -48,7 +51,7 @@ public class Places : MonoBehaviour
                 rigthareas[0] = false;
                 place1.GetComponent<Image>().sprite = wrong;
             }
-            if (placeforObject.tag == "shark")
+            if (placeforObject.tag == "bobka")
             {
                 areas[1] = false;
                 rigthareas[1] = false;
@@ -82,5 +85,13 @@ public class Places : MonoBehaviour
 
         info.SetActive(false);
         infoaboutplace.SetActive(false);
+        if (LoadModels.isFirstPlay)
+            mainui.SetActive(false);
+        else
+        {
+            mainui.SetActive(true);
+            instruction.SetActive(false);
+        }
+        LoadModels.isFirstPlay = false;
     }
 }

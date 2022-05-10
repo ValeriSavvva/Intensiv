@@ -125,7 +125,7 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
                 placeObject(hit, -90f, 2.3f);
                 Places.areas[0] = true;
             }
-            if (hit.transform.tag == "shark" && !Places.areas[1])
+            if (hit.transform.tag == "bobka" && !Places.areas[1])
             {
                 hit.transform.gameObject.SetActive(false);
                 if (MainTransform.name.Contains(hit.transform.tag))
