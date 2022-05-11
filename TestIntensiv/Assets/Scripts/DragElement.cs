@@ -133,7 +133,7 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
                     Places.place2.GetComponent<Image>().sprite = RigthImage;
                     Places.rigthareas[1] = true;
                 }
-                placeObject(hit, 120f, 0.1f);
+                placeObject(hit, 90f, 0.1f);
                 Places.areas[1] = true;
             }
             if (hit.transform.tag == "gaup" && !Places.areas[2])
