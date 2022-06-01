@@ -40,7 +40,7 @@ public class LoadModels : MonoBehaviour
 
     IEnumerator GetObjects()
     {
-        string url = "https://drive.google.com/uc?export=download&id=1cNX4Xdj86Xi57Ld-K-OVEAZavVbRxxzr";
+        string url = LinkToJSON.url;
 
         UnityWebRequest request = UnityWebRequest.Get(url);
 
