@@ -12,6 +12,9 @@ public class Menu : MonoBehaviour
 
     public void startgame()
     {
-        SceneManager.LoadScene(4);
+        if(LoadModels.isFirstPlay)
+            SceneManager.LoadScene(1);
+        else
+            SceneManager.LoadScene(2);
     }
 }

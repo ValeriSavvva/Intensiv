@@ -9,14 +9,20 @@ using UnityEngine.Networking;
 public class LoadModels : MonoBehaviour
 {
     public static bool isFirstPlay = true;
+    public Sprite gvozd;
 
     [Serializable]
     public class ObjectFromDisk
     {
         public string Name;
         public string RusName;
-        public string Description;
+        public string DescriptionObj;
+        public string DescriptionPlace;
         public string BundleUrl;
+        public float Size;
+        public float Rotation;
+        public float x;
+        public float y;
     }
 
     [Serializable]
@@ -58,7 +64,7 @@ public class LoadModels : MonoBehaviour
 
     IEnumerator GetModelsAndSprites()
     {
-        for(int i = 0; i < Models.models.Length; i++)
+        for(int i = 0; i < Models.models.Length && i < 10; i++)
         {
             while (!Caching.ready)
                 yield return null;
@@ -85,11 +91,17 @@ public class LoadModels : MonoBehaviour
 
                     DragPanel.models.Add(modelRequest.asset as GameObject);
                     DragPanel.images.Add(spriteRequest.asset as Sprite);
-                    DragPanel.names.Add(Models.models[i].RusName);
-                    DragPanel.description.Add(Models.models[i].Description);
+                    DragPanel.names.Add(Models.models[i].Name);
+                    DragPanel.rusnames.Add(Models.models[i].RusName);
+                    DragPanel.descriptionobj.Add(Models.models[i].DescriptionObj);
+                    DragPanel.descriptionplace.Add(Models.models[i].DescriptionPlace);
+                    DragPanel.size.Add(Models.models[i].Size);
+                    DragPanel.rotation.Add(Models.models[i].Rotation);
+                    DragPanel.x.Add(Models.models[i].x);
+                    DragPanel.z.Add(Models.models[i].y);
                 }
             }
         }
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 }

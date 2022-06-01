@@ -22,7 +22,7 @@ public class EndGame : MonoBehaviour
 
     public void main()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(0);
         for (int i = 0; i < Places.areas.Length; i++)
             Places.areas[i] = false;
 

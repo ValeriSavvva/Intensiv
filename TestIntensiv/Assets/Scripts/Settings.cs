@@ -34,6 +34,10 @@ public class Settings : MonoBehaviour
     {
         instructiontext.SetActive(true);
         Places.mainui.SetActive(false);
+        Places.infoaboutplace.SetActive(false);
+        InfoPlace.isCliked = false;
+        Places.info.SetActive(false);
+        Delete.isClicked = false;
     }
     
     public void close()
@@ -44,7 +48,7 @@ public class Settings : MonoBehaviour
 
     public void reloadgame()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(0);
         for (int i = 0; i < Places.areas.Length; i++)
             Places.areas[i] = false;
 

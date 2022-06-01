@@ -5,24 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class CheckForEnd : MonoBehaviour
 {
-    private bool[] needToEnd = { false, false };
     public GameObject end;
-    
+
     public void Update()
     {
-        for(int i = 0; i < needToEnd.Length; i++)
-        {
-            needToEnd[i] = Places.areas[i];
-        }
-
         check();
     }
 
     private void check()
     {
-        for (int i = 0; i < needToEnd.Length; i++)
+        for (int i = 0; i < Places.areas.Length; i++)
         {
-            if (!needToEnd[i])
+            if (!Places.areas[i])
             {
                 end.SetActive(false);
                 return;
@@ -34,6 +28,6 @@ public class CheckForEnd : MonoBehaviour
 
     public void confirm()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4);
     }
 }

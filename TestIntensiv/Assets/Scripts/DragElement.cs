@@ -114,39 +114,20 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
         if(Physics.Raycast(ray, out hit))
         {
-            if (hit.transform.tag == "kalancha" && !Places.areas[0])
+            if(DragPanel.names.Contains(hit.transform.name))
             {
                 hit.transform.gameObject.SetActive(false);
-                if (MainTransform.name.Contains(hit.transform.tag))
+
+                int i = DragPanel.names.IndexOf(hit.transform.name);
+                placeObject(hit, DragPanel.rotation[i], DragPanel.size[i]);
+
+                if(MainTransform.name.Equals(hit.transform.name))
                 {
-                    Places.place1.GetComponent<Image>().sprite = RigthImage;
-                    Places.rigthareas[0] = true;
+                    Places.place[i].GetComponent<Image>().sprite = RigthImage;
+                    Places.rigthareas[i] = true;
                 }
-                placeObject(hit, -90f, 2.3f);
-                Places.areas[0] = true;
-            }
-            if (hit.transform.tag == "bobka" && !Places.areas[1])
-            {
-                hit.transform.gameObject.SetActive(false);
-                if (MainTransform.name.Contains(hit.transform.tag))
-                {
-                    Places.place2.GetComponent<Image>().sprite = RigthImage;
-                    Places.rigthareas[1] = true;
-                }
-                placeObject(hit, 90f, 0.1f);
-                Places.areas[1] = true;
-            }
-            if (hit.transform.tag == "gaup" && !Places.areas[2])
-            {
-                hit.transform.gameObject.SetActive(false);
-                if (MainTransform.name.Contains(hit.transform.tag))
-                {
-                    Places.place3.GetComponent<Image>().sprite = RigthImage;
-                    Places.rigthareas[2] = true;
-                }
-                placeObject(hit, -50f, 2f);
-                Places.areas[2] = true;
-            }
+                Places.areas[i] = true;
+            }           
         }
     }
 

@@ -13,62 +13,59 @@ public class Places : MonoBehaviour
     public static GameObject nameofmodel;
     public static GameObject description;
     public static GameObject mainui;
-    public static GameObject place1;
-    public static GameObject place2;
-    public static GameObject place3;
     public static GameObject descplace;
     public static GameObject canvas;
     public static GameObject instruction;
+    public static GameObject[] place;
     public Sprite wrong;
     public static bool isFirstPlay;
-    public static bool[] areas = { false, false, false };
-    public static bool[] rigthareas = { false, false, false };
+    public static bool[] areas = { false };
+    public static bool[] rigthareas = { false };
 
     private void Start()
     {
+        int count = 0;
         info = GameObject.FindGameObjectWithTag("Info");
         infoaboutplace = GameObject.FindGameObjectWithTag("InfoAboutPlace");
         imageofmodel = GameObject.FindGameObjectWithTag("ImageOfModel");
         nameofmodel = GameObject.FindGameObjectWithTag("NameOfModel");
         description = GameObject.FindGameObjectWithTag("Description");
         mainui = GameObject.FindGameObjectWithTag("MainUI");
-        place1 = GameObject.FindGameObjectWithTag("place1");
-        place2 = GameObject.FindGameObjectWithTag("place2");
-        place3 = GameObject.FindGameObjectWithTag("place3");
         descplace = GameObject.FindGameObjectWithTag("DescPlace");
         canvas = GameObject.FindGameObjectWithTag("OurCanvas");
         instruction = GameObject.FindGameObjectWithTag("Instruction");
+        place = GameObject.FindGameObjectsWithTag("pl");
 
+        for (int i = 0; i < place.Length; i++)
+        {
+            if (i >= DragPanel.models.Count)
+                place[i].SetActive(false);
+            else
+                count++;
+        }
+
+        areas = new bool[count];
+        rigthareas = new bool[count]; 
+
+        //кнопка удаления (информация о объекте)
         info.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
         {
             currentObject = Delete.currentObject;
             placeforObject = Delete.placeforobject;
             Destroy(currentObject);
             placeforObject.SetActive(true);
-            if (placeforObject.tag == "kalancha")
-            {
-                areas[0] = false;
-                rigthareas[0] = false;
-                place1.GetComponent<Image>().sprite = wrong;
-            }
-            if (placeforObject.tag == "bobka")
-            {
-                areas[1] = false;
-                rigthareas[1] = false;
-                place2.GetComponent<Image>().sprite = wrong;
-            }
-            if (placeforObject.tag == "gaup")
-            {
-                areas[2] = false;
-                rigthareas[2] = false;
-                place3.GetComponent<Image>().sprite = wrong;
-            }
+            int i = DragPanel.names.IndexOf(placeforObject.name);
+            Debug.Log(i.ToString());
+            areas[i] = false;
+            rigthareas[i] = false;
+            place[i].GetComponent<Image>().sprite = wrong;
             DragPanel.returnElement(ref Delete.svc1, Delete.i);
             info.SetActive(false);
             mainui.SetActive(true);
             Delete.isClicked = false;
         });
 
+        //кнопка закрыть (информация о объекте)
         info.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() =>
         {
             info.SetActive(false);
@@ -76,6 +73,7 @@ public class Places : MonoBehaviour
             Delete.isClicked = false;
         });
 
+        //кнопка закрыть (информация о месте)
         infoaboutplace.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
         {
             infoaboutplace.SetActive(false);
@@ -85,6 +83,7 @@ public class Places : MonoBehaviour
 
         info.SetActive(false);
         infoaboutplace.SetActive(false);
+
         if (LoadModels.isFirstPlay)
             mainui.SetActive(false);
         else

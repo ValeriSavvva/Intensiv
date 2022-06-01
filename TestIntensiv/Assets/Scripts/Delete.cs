@@ -25,13 +25,16 @@ public class Delete : MonoBehaviour, IPointerDownHandler
             Debug.Log("Нажал");
             info.SetActive(true);
             Places.mainui.SetActive(false);
+            Places.infoaboutplace.SetActive(false);
+            InfoPlace.isCliked = false;
+            Places.instruction.SetActive(false);
             isClicked = true;
             i = index;
             currentObject = currentGO;
             placeforobject = plane;
             Places.imageofmodel.GetComponent<Image>().sprite = DragPanel.images[i];
-            Places.nameofmodel.GetComponent<Text>().text = DragPanel.names[i];
-            Places.description.GetComponent<Text>().text = DragPanel.description[i];
+            Places.nameofmodel.GetComponent<Text>().text = DragPanel.rusnames[i];
+            Places.description.GetComponent<Text>().text = DragPanel.descriptionobj[i];
         }
     }
 
