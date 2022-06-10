@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,7 +35,16 @@ public class Places : MonoBehaviour
         descplace = GameObject.FindGameObjectWithTag("DescPlace");
         canvas = GameObject.FindGameObjectWithTag("OurCanvas");
         instruction = GameObject.FindGameObjectWithTag("Instruction");
+
         place = GameObject.FindGameObjectsWithTag("pl");
+        List<GameObject> listPlaces = new List<GameObject>(place);
+        listPlaces = listPlaces.OrderBy(value => value.name).ToList();
+        
+        for(int i = 0; i < listPlaces.Count; i++)
+        {
+            place[i] = listPlaces[i];
+        }
+
 
         for (int i = 0; i < place.Length; i++)
         {
