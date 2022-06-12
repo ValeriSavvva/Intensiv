@@ -25,6 +25,8 @@ public class Delete : MonoBehaviour, IPointerDownHandler
             Debug.Log("Нажал");
             info.SetActive(true);
             Places.mainui.SetActive(false);
+            Places.joysticks.SetActive(false);
+            Places.cameras.SetActive(false);
             Places.infoaboutplace.SetActive(false);
             InfoPlace.isCliked = false;
             Places.instruction.SetActive(false);
@@ -35,6 +37,7 @@ public class Delete : MonoBehaviour, IPointerDownHandler
             Places.imageofmodel.GetComponent<Image>().sprite = DragPanel.images[i];
             Places.nameofmodel.GetComponent<Text>().text = DragPanel.rusnames[i];
             Places.description.GetComponent<Text>().text = DragPanel.descriptionobj[i];
+            CameraRotation.cameraRotationBlock = true;
         }
     }
 

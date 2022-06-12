@@ -9,6 +9,7 @@ public class SwitchCamera : MonoBehaviour
     [SerializeField]private GameObject maincamera;
 
     public static Camera currentCamera;
+    public static bool playerCamera = false;
 
     void Start()
     {
@@ -33,12 +34,14 @@ public class SwitchCamera : MonoBehaviour
             }
             maincamera.GetComponent<Camera>().enabled = true;
             maincamera.GetComponent<PhysicsRaycaster>().enabled = true;
+            CameraRotation.cameraRotationBlock = false;
             currentCamera = maincamera.GetComponent<Camera>();
         }
         else
         {
             maincamera.GetComponent<Camera>().enabled = false;
             maincamera.GetComponent<PhysicsRaycaster>().enabled = false;
+            CameraRotation.cameraRotationBlock = true;
             for (int j = 0; j < cm.Length; j++)
             {
                 if (j != i)
@@ -66,13 +69,24 @@ public class SwitchCamera : MonoBehaviour
         changeCam(1);
     }
 
-    public void changeCamåToThird()
+    public void changeCamåToPlayer()
     {
         changeCam(2);
+        Places.cameras.SetActive(false);
+        Places.joysticks.SetActive(true);
+        playerCamera = true;
     }
 
     public void changeCamåToMain()
     {
         changeCam(4);
+    }
+
+    public void backToMain()
+    {
+        changeCam(4);
+        Places.cameras.SetActive(true);
+        Places.joysticks.SetActive(false);
+        playerCamera = false;
     }
 }

@@ -14,6 +14,8 @@ public class Places : MonoBehaviour
     public static GameObject nameofmodel;
     public static GameObject description;
     public static GameObject mainui;
+    public static GameObject cameras;
+    public static GameObject joysticks;
     public static GameObject descplace;
     public static GameObject canvas;
     public static GameObject instruction;
@@ -35,6 +37,8 @@ public class Places : MonoBehaviour
         descplace = GameObject.FindGameObjectWithTag("DescPlace");
         canvas = GameObject.FindGameObjectWithTag("OurCanvas");
         instruction = GameObject.FindGameObjectWithTag("Instruction");
+        cameras = GameObject.FindGameObjectWithTag("dp");
+        joysticks = GameObject.FindGameObjectWithTag("joysticks");
 
         place = GameObject.FindGameObjectsWithTag("pl");
         List<GameObject> listPlaces = new List<GameObject>(place);
@@ -72,7 +76,14 @@ public class Places : MonoBehaviour
             DragPanel.returnElement(ref Delete.svc1, Delete.i);
             info.SetActive(false);
             mainui.SetActive(true);
+
+            if (SwitchCamera.playerCamera)
+                joysticks.SetActive(true);
+            else
+                cameras.SetActive(true);
+
             Delete.isClicked = false;
+            CameraRotation.cameraRotationBlock = false;
         });
 
         //кнопка закрыть (информация о объекте)
@@ -80,7 +91,14 @@ public class Places : MonoBehaviour
         {
             info.SetActive(false);
             mainui.SetActive(true);
+
+            if (SwitchCamera.playerCamera)
+                joysticks.SetActive(true);
+            else
+                cameras.SetActive(true);
+
             Delete.isClicked = false;
+            CameraRotation.cameraRotationBlock = false;
         });
 
         //кнопка закрыть (информация о месте)
@@ -88,17 +106,35 @@ public class Places : MonoBehaviour
         {
             infoaboutplace.SetActive(false);
             mainui.SetActive(true);
+
+            if (SwitchCamera.playerCamera)
+                joysticks.SetActive(true);
+            else
+                cameras.SetActive(true);
+
             InfoPlace.isCliked = false;
+            CameraRotation.cameraRotationBlock = false;
         });
 
         info.SetActive(false);
         infoaboutplace.SetActive(false);
 
         if (LoadModels.isFirstPlay)
+        {
             mainui.SetActive(false);
+            joysticks.SetActive(false);
+            cameras.SetActive(false);
+            CameraRotation.cameraRotationBlock = true;
+        }
         else
         {
             mainui.SetActive(true);
+
+            if (SwitchCamera.playerCamera)
+                joysticks.SetActive(true);
+            else
+                cameras.SetActive(true);
+
             instruction.SetActive(false);
         }
         LoadModels.isFirstPlay = false;

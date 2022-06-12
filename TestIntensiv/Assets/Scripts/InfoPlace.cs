@@ -16,9 +16,13 @@ public class InfoPlace : MonoBehaviour, IPointerDownHandler
             setTextOnPanel(DragPanel.descriptionplace[i]);
             isCliked = true;
             Places.mainui.SetActive(false);
+            Places.joysticks.SetActive(false);
+            Places.cameras.SetActive(false);
+            Places.cameras.SetActive(false);
             Places.info.SetActive(false);
             Places.instruction.SetActive(false);
             Delete.isClicked = false;
+            CameraRotation.cameraRotationBlock = true;
         }
     }
 

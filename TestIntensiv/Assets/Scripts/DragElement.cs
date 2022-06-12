@@ -97,6 +97,7 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public void OnBeginDrag(PointerEventData eventData)
     {
         transform.SetParent(DragParentTransform);
+        CameraRotation.cameraRotationBlock = true;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -129,6 +130,7 @@ public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
                 Places.areas[i] = true;
             }           
         }
+        CameraRotation.cameraRotationBlock = false;
     }
 
     private void placeObject(RaycastHit hit, float rotation, float scale)

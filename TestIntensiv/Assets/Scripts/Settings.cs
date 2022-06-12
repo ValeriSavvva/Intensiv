@@ -34,16 +34,26 @@ public class Settings : MonoBehaviour
     {
         instructiontext.SetActive(true);
         Places.mainui.SetActive(false);
+        Places.joysticks.SetActive(false);
+        Places.cameras.SetActive(false);
         Places.infoaboutplace.SetActive(false);
         InfoPlace.isCliked = false;
         Places.info.SetActive(false);
         Delete.isClicked = false;
+        CameraRotation.cameraRotationBlock = true;
     }
     
     public void close()
     {
         instructiontext.SetActive(false);
         Places.mainui.SetActive(true);
+
+        if (SwitchCamera.playerCamera)
+            Places.joysticks.SetActive(true);
+        else
+            Places.cameras.SetActive(true);
+
+        CameraRotation.cameraRotationBlock = false;
     }
 
     public void reloadgame()

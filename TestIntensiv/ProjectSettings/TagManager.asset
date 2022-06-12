@@ -37,6 +37,8 @@ TagManager:
   - icecream3
   - icecream4
   - pl
+  - dp
+  - joysticks
   layers:
   - Default
   - TransparentFX
