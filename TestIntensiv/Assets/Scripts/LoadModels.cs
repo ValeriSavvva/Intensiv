@@ -35,6 +35,18 @@ public class LoadModels : MonoBehaviour
 
     void Start()
     {
+        AssetBundle.UnloadAllAssetBundles(true);
+        DragPanel.models.Clear();
+        DragPanel.images.Clear();
+        DragPanel.names.Clear();
+        DragPanel.rusnames.Clear();
+        DragPanel.descriptionobj.Clear();
+        DragPanel.descriptionplace.Clear();
+        DragPanel.size.Clear();
+        DragPanel.rotation.Clear();
+        DragPanel.x.Clear();
+        DragPanel.z.Clear();
+
         StartCoroutine(GetObjects());
     }
 
@@ -49,6 +61,7 @@ public class LoadModels : MonoBehaviour
         if(request.isNetworkError)
         {
             Debug.Log("Нет интернета!");
+            SceneManager.LoadScene(0);
         }
         else
         {
@@ -75,6 +88,7 @@ public class LoadModels : MonoBehaviour
             if (w.error != null)
             {
                 Debug.Log("Не удалось загрузить бандл");
+                SceneManager.LoadScene(0);
             }
             else
             {

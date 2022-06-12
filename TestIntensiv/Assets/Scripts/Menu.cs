@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+
     public void exit()
     {
         Application.Quit();
@@ -12,10 +13,7 @@ public class Menu : MonoBehaviour
 
     public void startgame()
     {
-        if(LoadModels.isFirstPlay)
-            SceneManager.LoadScene(1);
-        else
-            SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void setting()

@@ -118,6 +118,7 @@ public class Places : MonoBehaviour
 
         info.SetActive(false);
         infoaboutplace.SetActive(false);
+        joysticks.SetActive(false);
 
         if (LoadModels.isFirstPlay)
         {

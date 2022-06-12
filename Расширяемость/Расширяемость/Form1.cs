@@ -206,6 +206,8 @@ namespace Расширяемость
             itemsList.Items.RemoveAt(selectIndex);
             delete.Enabled = false;
             changeText("", "", "", "", "", "", "", "", "");
+            string serialized = JsonSerializer.Serialize(gm);
+            File.WriteAllText(filePath, serialized);
             updateItemsList();
         }
 

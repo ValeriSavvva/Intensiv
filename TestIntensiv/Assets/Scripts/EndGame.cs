@@ -23,6 +23,7 @@ public class EndGame : MonoBehaviour
     public void main()
     {
         SceneManager.LoadScene(0);
+        SwitchCamera.playerCamera = false;
         for (int i = 0; i < Places.areas.Length; i++)
             Places.areas[i] = false;
 
@@ -30,6 +31,7 @@ public class EndGame : MonoBehaviour
             Places.rigthareas[i] = false;
 
         Delete.isClicked = false;
+        CameraRotation.cameraRotationBlock = false;
     }
     public void exit()
     {
