@@ -66,5 +66,7 @@ public class Settings : MonoBehaviour
             Places.rigthareas[i] = false;
 
         Delete.isClicked = false;
+        CameraRotation.cameraRotationBlock = false;
+        SwitchCamera.playerCamera = false;
     }
 }

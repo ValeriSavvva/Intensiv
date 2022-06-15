@@ -33,8 +33,8 @@ public class DragPanel : MonoBehaviour
             script.DragModelPrefab = dragModelPrefab;
             script.DragParentTransform = transform;
             script.RigthImage = RigthImage;
-            var obj = Instantiate(cilinder, new Vector3(x[i], 0.3f, z[i]), Quaternion.identity);
-            obj.transform.localScale = new Vector3(size[i] * 4f, 0.001f, size[i] * 4f);
+            var obj = Instantiate(cilinder, new Vector3(x[i], 1.025f, z[i]), Quaternion.identity);
+            obj.transform.localScale = new Vector3(size[i] * 4f, 0.1f, size[i] * 4f);
             obj.transform.name = names[i];
         }
     }

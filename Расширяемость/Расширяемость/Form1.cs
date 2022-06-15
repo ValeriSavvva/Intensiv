@@ -142,12 +142,12 @@ namespace Расширяемость
                 {
                     gm.Resize();
                     gm.models[gm.models.Length - 1] = a;
-                    string serialized = JsonSerializer.Serialize(gm);
-                    File.WriteAllText(filePath, serialized);
                 }
                 updateItemsList();
                 changeText("", "", "", "", "", "", "", "", "");
                 delete.Enabled = false;
+                string serialized = JsonSerializer.Serialize(gm);
+                File.WriteAllText(filePath, serialized);
             }
             catch (Exception ex)
             {

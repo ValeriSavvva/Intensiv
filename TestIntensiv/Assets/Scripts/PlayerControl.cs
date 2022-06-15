@@ -8,6 +8,12 @@ public class PlayerControl : MonoBehaviour
     public Joystick joystick;
     private float vertical;
     private float horizontal;
+    Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
@@ -25,23 +31,24 @@ public class PlayerControl : MonoBehaviour
 
         if (vertical >= 0.5)
         {
-            transform.localPosition += -transform.forward * speed * Time.deltaTime;
+            rb.MovePosition(transform.position - transform.forward * speed * Time.deltaTime);
         }
 
         if (vertical <= -0.5)
         {
-            transform.localPosition += transform.forward * speed * Time.deltaTime;
+            rb.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
         }
 
         if (horizontal <= -0.5)
         {
-            transform.localPosition += transform.right * speed * Time.deltaTime;
+            rb.MovePosition(transform.position + transform.right * speed * Time.deltaTime);
         }
 
         if (horizontal >= 0.5)
         {
-            transform.localPosition += -transform.right * speed * Time.deltaTime;
+            rb.MovePosition(transform.position - transform.right * speed * Time.deltaTime);
         }
+        rb.velocity = new Vector3(0, 0, 0);
     }
 
     private void GetInput()

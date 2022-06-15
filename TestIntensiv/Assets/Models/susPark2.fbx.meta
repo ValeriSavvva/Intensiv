@@ -1,0 +1,276 @@
+fileFormatVersion: 2
+guid: 4d740de6d4f3cb6459da409fc1b7d47b
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 1759015860940566360
+    second: Tree_temp_climate_011.006|Tree_temp_climate_001|Take 001|BaseLayer
+  - first:
+      74: 6666547958179392144
+    second: Tree_temp_climate_011.006|Tree_temp_climate_002|Take 001|BaseLayer
+  - first:
+      74: 2478858777310820427
+    second: Tree_temp_climate_011.006|Tree_temp_climate_002|Take 001|BaseLayer.001
+  - first:
+      74: 6647562555954102673
+    second: Tree_temp_climate_011.006|Tree_temp_climate_003|Take 001|BaseLayer
+  - first:
+      74: -1446322879715596642
+    second: Tree_temp_climate_011.006|Tree_temp_climate_004|Take 001|BaseLayer
+  - first:
+      74: -4092679958391346657
+    second: Tree_temp_climate_011.006|Tree_temp_climate_005|Take 001|BaseLayer
+  - first:
+      74: 1026732050415614337
+    second: Tree_temp_climate_011.006|Tree_temp_climate_006|Take 001|BaseLayer
+  - first:
+      74: -2081978282753373343
+    second: Tree_temp_climate_011.006|Tree_temp_climate_007|Take 001|BaseLayer
+  - first:
+      74: 2419938474739982341
+    second: Tree_temp_climate_011.006|Tree_temp_climate_007|Take 001|BaseLayer.001
+  - first:
+      74: -6647049289890573839
+    second: Tree_temp_climate_011.006|Tree_temp_climate_008|Take 001|BaseLayer
+  - first:
+      74: 8661219020891789330
+    second: Tree_temp_climate_011.006|Tree_temp_climate_008|Take 001|BaseLayer.001
+  - first:
+      74: 553180668508963943
+    second: Tree_temp_climate_011.006|Tree_temp_climate_008|Take 001|BaseLayer.002
+  - first:
+      74: -7465689468261664632
+    second: Tree_temp_climate_011.006|Tree_temp_climate_008|Take 001|BaseLayer.003
+  - first:
+      74: -5243888070722350360
+    second: Tree_temp_climate_011.006|Tree_temp_climate_008|Take 001|BaseLayer.004
+  - first:
+      74: -9191867466515173417
+    second: Tree_temp_climate_011.006|Tree_temp_climate_008|Take 001|BaseLayer.005
+  - first:
+      74: -7769699617736691783
+    second: Tree_temp_climate_011.006|Tree_temp_climate_008|Take 001|BaseLayer.006
+  - first:
+      74: 1932183683712003866
+    second: Tree_temp_climate_011.006|Tree_temp_climate_008|Take 001|BaseLayer.007
+  - first:
+      74: 3990234989255407332
+    second: Tree_temp_climate_011.006|Tree_temp_climate_008|Take 001|BaseLayer.008
+  - first:
+      74: -823659130391299520
+    second: Tree_temp_climate_011.006|Tree_temp_climate_008|Take 001|BaseLayer.009
+  - first:
+      74: -6766999689697005079
+    second: Tree_temp_climate_011.006|Tree_temp_climate_008|Take 001|BaseLayer.010
+  - first:
+      74: -8952260728640157437
+    second: Tree_temp_climate_011.006|Tree_temp_climate_009|Take 001|BaseLayer
+  - first:
+      74: -1001719848607458324
+    second: Tree_temp_climate_011.006|Tree_temp_climate_010|Take 001|BaseLayer
+  - first:
+      74: 7248649290797416655
+    second: Tree_temp_climate_011.006|Tree_temp_climate_010|Take 001|BaseLayer.001
+  - first:
+      74: 2808989449531513144
+    second: Tree_temp_climate_011.006|Tree_temp_climate_010|Take 001|BaseLayer.002
+  - first:
+      74: -4739932065502805494
+    second: Tree_temp_climate_011.006|Tree_temp_climate_010|Take 001|BaseLayer.003
+  - first:
+      74: 1359460214988216504
+    second: Tree_temp_climate_011.006|Tree_temp_climate_010|Take 001|BaseLayer.004
+  - first:
+      74: -4921790229948371902
+    second: Tree_temp_climate_011.006|Tree_temp_climate_010|Take 001|BaseLayer.005
+  - first:
+      74: -3877563141388672036
+    second: Tree_temp_climate_011.006|Tree_temp_climate_010|Take 001|BaseLayer.006
+  - first:
+      74: 2286174410516215712
+    second: Tree_temp_climate_011.006|Tree_temp_climate_010|Take 001|BaseLayer.007
+  - first:
+      74: -130403698509684346
+    second: Tree_temp_climate_011.006|Tree_temp_climate_010|Take 001|BaseLayer.008
+  - first:
+      74: 8511683944924129055
+    second: Tree_temp_climate_011.006|Tree_temp_climate_010|Take 001|BaseLayer.009
+  - first:
+      74: 815766245265059741
+    second: Tree_temp_climate_011.006|Tree_temp_climate_010|Take 001|BaseLayer.010
+  - first:
+      74: -1148208725625469710
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer
+  - first:
+      74: -1835596666823508230
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer.001
+  - first:
+      74: 4306969366016276432
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer.002
+  - first:
+      74: 266264721817096412
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer.003
+  - first:
+      74: -5369269344948105173
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer.004
+  - first:
+      74: 2066924914359122357
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer.005
+  - first:
+      74: 2158068627911791882
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer.006
+  - first:
+      74: 1373228448167650769
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer.007
+  - first:
+      74: -1572239485183176438
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer.008
+  - first:
+      74: 9044076764469914108
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer.009
+  - first:
+      74: 277953376773942930
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer.010
+  - first:
+      74: -7532050629386353359
+    second: Tree_temp_climate_011.006|Tree_temp_climate_011|Take 001|BaseLayer.011
+  - first:
+      74: -4065066327649832126
+    second: Tree_temp_climate_011.006|Tree_temp_climate_012|Take 001|BaseLayer
+  - first:
+      74: -4057598489726235679
+    second: Tree_temp_climate_011.006|Tree_temp_climate_013|Take 001|BaseLayer
+  - first:
+      74: 7654110816352532229
+    second: Tree_temp_climate_011.006|Tree_temp_climate_013|Take 001|BaseLayer.001
+  - first:
+      74: -5470785828287970044
+    second: Tree_temp_climate_011.006|Tree_temp_climate_013|Take 001|BaseLayer.002
+  - first:
+      74: -7813513639407509876
+    second: Tree_temp_climate_011.006|Tree_temp_climate_013|Take 001|BaseLayer.003
+  - first:
+      74: 2517494222721115269
+    second: Tree_temp_climate_011.006|Tree_temp_climate_013|Take 001|BaseLayer.004
+  - first:
+      74: 2966865443972813304
+    second: Tree_temp_climate_011.006|Tree_temp_climate_014|Take 001|BaseLayer
+  - first:
+      74: -8183345376375976321
+    second: Tree_temp_climate_011.006|Tree_temp_climate_015|Take 001|BaseLayer
+  - first:
+      74: 3346956696057139164
+    second: Tree_temp_climate_011.006|Tree_temp_climate_016|Take 001|BaseLayer
+  - first:
+      74: 749607478194501013
+    second: Tree_temp_climate_011.006|Tree_temp_climate_017|Take 001|BaseLayer
+  - first:
+      74: 6147221863417478961
+    second: Tree_temp_climate_011.006|Tree_temp_climate_018|Take 001|BaseLayer
+  - first:
+      74: 3850763220256835176
+    second: Tree_temp_climate_011.006|Tree_temp_climate_019|Take 001|BaseLayer
+  - first:
+      74: 874359789033689199
+    second: Tree_temp_climate_011.006|Tree_temp_climate_020|Take 001|BaseLayer
+  - first:
+      74: -7756841222985472695
+    second: Tree_temp_climate_011.006|Tree_temp_climate_021|Take 001|BaseLayer
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

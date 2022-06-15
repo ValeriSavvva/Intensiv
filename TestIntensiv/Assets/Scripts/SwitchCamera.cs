@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class SwitchCamera : MonoBehaviour
 {
-    [SerializeField]private GameObject[] cm;
+    [SerializeField]private GameObject playerCam;
     [SerializeField]private GameObject maincamera;
 
     public static Camera currentCamera;
@@ -13,11 +13,8 @@ public class SwitchCamera : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < cm.Length; i++)
-        {
-            cm[i].GetComponent<Camera>().enabled = false;
-            cm[i].GetComponent<PhysicsRaycaster>().enabled = false;
-        }
+        playerCam.GetComponent<Camera>().enabled = false;
+        playerCam.GetComponent<PhysicsRaycaster>().enabled = false;
         maincamera.GetComponent<Camera>().enabled = true;
         maincamera.GetComponent<PhysicsRaycaster>().enabled = true;
         currentCamera = maincamera.GetComponent<Camera>();
@@ -27,11 +24,8 @@ public class SwitchCamera : MonoBehaviour
     {
         if(i == 4)
         {
-            for (i = 0; i < cm.Length; i++)
-            {
-                cm[i].GetComponent<Camera>().enabled = false;
-                cm[i].GetComponent<PhysicsRaycaster>().enabled = false;
-            }
+            playerCam.GetComponent<Camera>().enabled = false;
+            playerCam.GetComponent<PhysicsRaycaster>().enabled = false;
             maincamera.GetComponent<Camera>().enabled = true;
             maincamera.GetComponent<PhysicsRaycaster>().enabled = true;
             CameraRotation.cameraRotationBlock = false;
@@ -42,34 +36,12 @@ public class SwitchCamera : MonoBehaviour
             maincamera.GetComponent<Camera>().enabled = false;
             maincamera.GetComponent<PhysicsRaycaster>().enabled = false;
             CameraRotation.cameraRotationBlock = true;
-            for (int j = 0; j < cm.Length; j++)
-            {
-                if (j != i)
-                {
-                    cm[j].GetComponent<Camera>().enabled = false;
-                    cm[j].GetComponent<PhysicsRaycaster>().enabled = false;
-                }
-                else
-                {
-                    cm[j].GetComponent<Camera>().enabled = true;
-                    cm[j].GetComponent<PhysicsRaycaster>().enabled = true;
-                    currentCamera = cm[j].GetComponent<Camera>();
-                }
-            }
+            playerCam.GetComponent<Camera>().enabled = true;
+            playerCam.GetComponent<PhysicsRaycaster>().enabled = true;
+            currentCamera = playerCam.GetComponent<Camera>();
         }
     }
-
-    public void changeCamåToFirst()
-    {
-        changeCam(0);
-    }
-
-    public void changeCamåToSecond()
-    {
-        changeCam(1);
-    }
-
-    public void changeCamåToPlayer()
+    public void changeCameToPlayer()
     {
         changeCam(2);
         Places.cameras.SetActive(false);
@@ -77,7 +49,7 @@ public class SwitchCamera : MonoBehaviour
         playerCamera = true;
     }
 
-    public void changeCamåToMain()
+    public void changeCameToMain()
     {
         changeCam(4);
     }

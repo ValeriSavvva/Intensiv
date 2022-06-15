@@ -16,6 +16,7 @@ public class ReloadGame : MonoBehaviour
 
         Delete.isClicked = false;
         CameraRotation.cameraRotationBlock = false;
+        SwitchCamera.playerCamera = false;
     }
     
     public void exit()

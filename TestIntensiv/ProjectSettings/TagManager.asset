@@ -39,6 +39,8 @@ TagManager:
   - pl
   - dp
   - joysticks
+  - car
+  - stop
   layers:
   - Default
   - TransparentFX
