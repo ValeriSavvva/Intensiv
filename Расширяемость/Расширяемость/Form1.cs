@@ -193,11 +193,6 @@ namespace Расширяемость
                 gm = JsonSerializer.Deserialize<GameModels>(jsonFile);
                 updateItemsList();
             }
-            else
-            {
-                gm = new GameModels();
-                openFile.FileName = null;
-            }
         }
 
         private void delete_Click(object sender, EventArgs e)

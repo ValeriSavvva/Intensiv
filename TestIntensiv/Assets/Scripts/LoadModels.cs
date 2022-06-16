@@ -69,7 +69,14 @@ public class LoadModels : MonoBehaviour
             {
                 Debug.Log("Получено!");
                 Debug.Log(request.downloadHandler.text);
-                Models = JsonUtility.FromJson<GameModels>(request.downloadHandler.text);
+                try
+                {
+                    Models = JsonUtility.FromJson<GameModels>(request.downloadHandler.text);
+                }
+                catch
+                {
+                    SceneManager.LoadScene(0);
+                }
                 StartCoroutine(GetModelsAndSprites());
             }
         }
