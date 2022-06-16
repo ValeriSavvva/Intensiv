@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.Json;
+using System.Diagnostics;
 
 namespace Расширяемость
 {
@@ -88,8 +89,7 @@ namespace Расширяемость
                 }
                 else
                 {
-                    gm = new GameModels();
-                    openFile.FileName = null;
+                    Process.GetCurrentProcess().Kill();
                 }
             }
             catch
